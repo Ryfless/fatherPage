@@ -1,0 +1,63 @@
+/* General styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: black;
+    color: white;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.typing-text, .hello-text {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Typing animation */
+.typing-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid white;
+    width: 0;
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+/* Fade in from bottom for Hello World text */
+.hello-text {
+    display: none;
+    opacity: 0;
+    animation: fadeInFromBottom 1s ease forwards;
+    animation-delay: 3s; /* Delay to show after 10 seconds */
+}
+
+@keyframes fadeInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
